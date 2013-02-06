@@ -1,0 +1,13 @@
+<h3>Настройки Bot-сервера</h3>
+<form action="" method="post">
+	<span>Статус бот сервера</span>
+	<input type="radio" name="bot_on" id="bot_on" value="1" <?= $this->bot_on['value']==='1' ? 'checked="checked"' : '' ?> />
+	<label for="bot_on">включен</label>
+	<input type="radio" name="bot_on" id="bot_off" value="0" <?= $this->bot_on['value']!='1' ? 'checked="checked"' : '' ?> />
+	<label for="bot_off">выключен</label>
+	<br/>
+	<label for="bot_online_count">Количество ботов онлайн</label>
+	<input type="text" name="bot_online_count" id="bot_online_count" value="<?= $this->bot_online_count['value'] ?>" />
+	<br/>
+	<input type="submit" value="Cохранить" />
+</form>

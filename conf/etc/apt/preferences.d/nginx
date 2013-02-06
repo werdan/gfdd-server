@@ -1,0 +1,22 @@
+#PHP5, NGINX
+Package: php5-fpm nginx php5-common php5-mysql libpcre3 nginx-full libgeoip1 nginx-common php5-gd
+Pin: release a=stable
+Pin-Priority: 700
+
+Package: php5-fpm nginx php5-common php5-mysql libpcre3 nginx-full libgeoip1 nginx-common php5-gd
+Pin: release a=testing
+Pin-Priority: 650
+
+Package: php5-fpm nginx php5-common php5-mysql libpcre3 nginx-full libgeoip1 nginx-common php5-gd
+Pin: release a=unstable
+Pin-Priority: 600
+
+#OTHER
+Package: *
+Pin: release a=stable
+Pin-priority: 550
+
+#OTHER
+Package: *
+Pin: release a=testing
+Pin-priority: 500

@@ -1,0 +1,46 @@
+upstream  backend  {
+        server 127.0.0.1:9000;
+}
+
+
+server {
+
+	root /var/www/gfdd/public;
+	index index.php;
+
+	server_name goldenfishdateanddish.com;
+	server_name 54.247.162.86;
+
+	types {
+    		text/plain log;
+	}
+
+	if (!-e $request_filename) { 
+    		rewrite ^.*$ /index.php last;
+  	}
+
+	location ~ (\.php/?)$ {
+
+            fastcgi_index index.php;
+            include /etc/nginx/fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME /var/www/gfdd/public/index.php;
+            fastcgi_param APPLICATION_ENV production;
+
+            if (-e $request_filename) { # check if requested path exists
+                fastcgi_pass backend;
+            }
+
+        }
+        location ~ (\.php5/?)$ {
+
+            fastcgi_index index.php;
+            include /etc/nginx/fastcgi_params;
+            if (-e $request_filename) { # check if requested path exists
+                fastcgi_pass backend;
+            }
+
+        }
+
+}
+
+

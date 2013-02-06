@@ -1,0 +1,26 @@
+<table border="1" width="100%">
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>City</th>
+		<th>Address</th>
+		<th>Comments</th>
+		<th>Latitude / Longitude</th>
+		<th>Priority</th>
+		<th>Selected</th>
+	</tr>
+<? foreach($this->places as $place) { ?>
+	<tr>
+		<td><?= $place['id'] ?></td>
+		<td><?= $place['name'] ?></td>
+		<td><?= $this->placeTypes[$place['type_id']] ?></td>
+		<td><?= $this->placeCites[$place['city_id']] ?></td>
+		<td><?= $place['address'] ?></td>
+		<td><?= $place['comments'] ?></td>
+		<td><?= $place['latitude'] ?> / <?= $place['longitude']?></td>
+		<td><?= $place['priority'] ?></td>
+		<td><?= $place['selected'] ?></td>
+	</tr>
+<? } ?>
+</table>
